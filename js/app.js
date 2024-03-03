@@ -14,12 +14,30 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const rent = parseInt(rentString);
   const clothes = parseInt(clothesString);
 
-  const totalExpenseCalc = income - (food + clothes + rent);
+  const totalExpense = food + clothes + rent;
+  const totalExpenseCalc = income - totalExpense;
 
   const totalExpenseField = document.getElementById("total-expense");
-  totalExpenseField.innerText = totalExpenseCalc;
+  totalExpenseField.innerText = totalExpense;
+
+  const balanceField = document.getElementById("balance");
+  balanceField.innerText = totalExpenseCalc;
 });
 
 document.getElementById("save-btn").addEventListener("click", function () {
   const totalExpenseField = document.getElementById("total-expense");
+  const totalExpenseString = totalExpenseField.innerText;
+  const totalExpense = parseInt(totalExpenseString);
+
+  const saveField = document.getElementById("save");
+  const saveString = saveField.value;
+  const save = parseInt(saveString);
+  const savingAmount = totalExpense * (save / 100);
+
+  const SavingAmountField = document.getElementById("saving-amount");
+  SavingAmountField.innerText = savingAmount;
+
+  const remainingBalance = totalExpense - savingAmount;
+  const remainingBalanceField = document.getElementById("remaining-balance");
+  remainingBalanceField.innerText = remainingBalance;
 });
