@@ -25,7 +25,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 });
 
 document.getElementById("save-btn").addEventListener("click", function () {
-  const totalExpenseField = document.getElementById("total-expense");
+  const totalExpenseField = document.getElementById("balance");
   const totalExpenseString = totalExpenseField.innerText;
   const totalExpense = parseInt(totalExpenseString);
 
